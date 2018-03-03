@@ -8,7 +8,7 @@ const posts = [
   },
   {
     id: 2,
-    username: "bvivians1",
+    username: "mpencot0",
     text:
       "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.",
     date: "2017-08-04 06:17:29"
@@ -29,14 +29,14 @@ const posts = [
   },
   {
     id: 5,
-    username: "hmelly4",
+    username: "slogesdale9",
     text:
       "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
     date: "2017-11-05 08:24:16"
   },
   {
     id: 6,
-    username: "bharrhy5",
+    username: "mpencot0",
     text:
       "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
     date: "2017-10-07 10:01:07"
@@ -57,7 +57,7 @@ const posts = [
   },
   {
     id: 9,
-    username: "gcrampin8",
+    username: "ljeffs6",
     text:
       "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
     date: "2017-06-11 00:10:04"
@@ -70,3 +70,32 @@ const posts = [
     date: "2017-10-09 12:34:55"
   }
 ];
+
+/* This week we'll be looking at potential operations we may need
+        to run on social media post data.
+
+    For today's problem, we'd like to be able to view all the posts
+      from a given user, display a collection that includes the number
+      of posts the user made and all the post data from that user.
+
+    (e.g ljeffs6 => {
+      count: 2,
+      posts: [{
+        id: 9,
+        username: "ljeffs6",
+        text:
+          "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+        date: "2017-06-11 00:10:04"},
+        {
+          id: 7,
+        username: "ljeffs6",
+        text:
+          "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+        date: "2017-09-24 22:30:55"
+        }]
+      }
+    )
+
+  Once that's completed, organize the collection by the datetime the
+    post was made.
+*/
