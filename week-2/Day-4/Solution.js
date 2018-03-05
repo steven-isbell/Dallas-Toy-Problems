@@ -70,3 +70,47 @@ const posts = [
     date: "2017-10-09 12:34:55"
   }
 ];
+
+/*** Solution including keyword search ***/
+
+const keywords = ["twitter", "amazon", "social", "media", "facebook", "people"];
+
+function groupBy(arr, value) {
+  const groupedCollection = {};
+  if (Array.isArray(value)) {
+    for (let i = 0; i < value.length; i++) {
+      groupedCollection[value[i]] = [];
+    }
+    for (let j = 0; j < keywords.length; j++) {
+      for (let k = 0; k < arr.length; k++) {
+        if (arr[k].text.toLowerCase().includes(keywords[j]))
+          groupedCollection[keywords[j]].push(arr[k]);
+      }
+    }
+  } else {
+    for (let i = 0; i < arr.length; i++) {
+      if (!groupedCollection[arr[i][value]])
+        groupedCollection[arr[i][value]] = [];
+      groupedCollection[arr[i][value]].push(arr[i]);
+    }
+  }
+  return groupedCollection;
+}
+
+groupBy(posts, "username");
+// groupBy(posts, "date");
+// groupBy(posts, keywords);
+
+/*** Solution without keyword search  ***/
+
+function groupBy(arr, value) {
+  const groupedCollection = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (!groupedCollection[arr[i][value]])
+      groupedCollection[arr[i][value]] = [];
+    groupedCollection[arr[i][value]].push(arr[i]);
+  }
+  return groupedCollection;
+}
+
+groupBy(posts, "date");

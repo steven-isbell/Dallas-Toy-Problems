@@ -73,6 +73,21 @@ const posts = [
 
 /****** Part One ******/
 
+// Standard Solution
+function userPosts(arr, user) {
+  const posts = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].username === user) {
+      posts.push(arr[i]);
+    }
+  }
+  return {
+    count: posts.length,
+    posts: posts
+  };
+  // or with object shorthand { count: posts.length, posts }
+}
+
 // Filter
 const userPosts = (arr, user) => {
   const userFilter = arr.filter(post => post.username === user);
@@ -88,21 +103,6 @@ const userPosts = (arr, user) => ({
   count: arr.filter(post => post.username === user).length,
   posts: arr.filter(post => post.username === user)
 });
-
-// Standard Solution
-function userPosts(arr, user) {
-  const posts = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].username === user) {
-      posts.push(arr[i]);
-    }
-  }
-  return {
-    count: posts.length,
-    posts: posts
-  };
-  // or with object shorthand { count: posts.length, posts }
-}
 
 /**** Part Two ****/
 
