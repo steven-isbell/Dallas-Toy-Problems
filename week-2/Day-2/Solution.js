@@ -79,8 +79,8 @@ function filterPosts(arr) {
   for (let i = 0; i < arr.length; i++) {
     const split = arr[i].text.split(" ");
     for (let j = 0; j < split.length; j++) {
-      if (wordsToFilter.includes(split[j].toLowerCase())) {
-        split[j] = "*".repeat(split[j].length);
+      if (wordsToFilter.includes(split[j].toLowerCase().replace(/,/g, ""))) {
+        split[j] = "*".replace(/,/gi, "").repeat(split[j].length) + ",";
       }
     }
     arr[i].text = split.join(" ");
@@ -96,8 +96,8 @@ const filterPosts = arr =>
         .split(" ")
         .map(
           word =>
-            wordsToFilter.includes(word.toLowerCase())
-              ? "*".repeat(word.length)
+            wordsToFilter.includes(word.toLowerCase().replace(/,/g, ""))
+              ? "*".replace(/,/gi, "").repeat(word.length) + ","
               : word
         )
         .join(" ")
