@@ -2,17 +2,19 @@
 
 ## Week 3 - Day 1 - Toy Problem:
 
-### [User is authorized](https://repl.it/@shea_close/Week-3-Day-1)
+### [Basic Crud Ops](https://repl.it/@shea_close/Week-3-Day-1)
 
 ###### Introduction:
 
-Our task is to determine if a user is currently logged in using standard express functionality. The user (if exists) can be found on req.user. Your job will be to:
+Today we will be writing basic CRUD endpoints in node. Your job will be to:
 
-1.  Confirm if the user is logged in.
-    * User information can be found on req.user.
-    * If the user does not exist, pass '/login' as an argument to the res.redirect method.
-1.  Confirm if the user is authorized.
-    * The user will have a property that contains this information, try using console.log to see what information is getting passed in on the user object.
-    * If the user is authorized, return the response object with a status of 200, and the user object (using the json or send methods)
-1.  If the user is logged in but _NOT_ Authorized:
-    * Return the response object with a status of 500 and the message `Not Authorized`
+1.  get /api/people
+    * Return all users from the req object with a status of 200
+1.  get /api/people/:id
+    * Find the correct user object from the users and return it based on the params id.
+1.  put /api/people/:id
+    * Update find the correct user object, then update it with the values passed on the req.body
+1.  post /api/people/
+    * Add the user on req.body to the users array then return the updated array
+1.  delete /api/people/:id
+    * Using the params id, find and remove the user with the matching id.
