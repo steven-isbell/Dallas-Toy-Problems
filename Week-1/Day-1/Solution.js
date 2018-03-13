@@ -1,10 +1,24 @@
-// Below is an array of products that are in a cart.
-// Write a function That will take in an id of an item to be removed from the cart and the cart array.
-// The function will remove the item from the array if it exists.
-// When you have updated the cart then return the new cart.
+/* 
+  Our goal today is to create a function called removeItem. 
+    * removeItem will take in two arguments, an array and an id. 
+    * Loop through the array to see if there is an item whose id matches the passed in id.
+    * If the object exists, remove it from the array. 
+    * Either way, return the array when complete.
+*/
 
-//Advance use a filter function
-//Master Do this in one line
+// function removeItem(arr, id){
+//   arr.splice( arr.findIndex(c=>c.id === id), 1 );
+//   return arr;
+// }
+
+function removeItem(arr, id) {
+  for (var i = arr.length - 1; i > -1; i--) {
+    if (arr[i].id === id) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+}
 
 let cart = [
   {
@@ -39,17 +53,15 @@ let cart = [
   }
 ];
 
-function removeFromCart(id, currentCart) {
-  let newCart = currentCart;
-  for (let i = 0; i < newCart.length; i++) {
-    if (newCart[i].id === id) {
-      newCart.splice(i, 1);
-    }
-  }
-  return newCart;
-}
+var id = 5;
+var test = removeItem(cart, id);
 
-let removeItem = (id, currentCart) =>
-  currentCart.filter(item => item.id !== id);
+const { should } = require("chai");
+should();
+cart.should.be.a("array");
+cart.length.should.equal(4);
+test.should.be.a("array");
+test.length.should.equal(4);
+(test.find(c => c.id === id) !== undefined).should.equal(false);
 
-let x = removeItem(2, cart);
+console.log("all tests passing!");
