@@ -1,57 +1,98 @@
-// Below is an array of products that are in a cart.
-// Write a function that will take in the cart and a tax amount and calculate the total price of the cart with the tax.
-// Return the total of the cart rounded the 2nd decimal place
+/* 
+  Our goal today is to create a function called calcTotal. 
+    * calcTotal will take in two arguments, an array of objects and a tax amount.
+    * Calculate the total price of items in the array (pay attention to quantity)
+    * Return the total including taxes rounded to two decimal.
+*/
 
-// Advanced: use a reduce function
-// Master: Do this in one line
+// Your code here.
 
-let cart = [
-  {
-    id: 1,
-    product: "Snapple Raspberry Tea",
-    price: 16.82,
-    quantity: 2
-  },
-  {
-    id: 2,
-    product: "Wine - Peller Estates Late",
-    price: 15.07,
-    quantity: 3
-  },
-  {
-    id: 3,
-    product: "Isomalt",
-    price: 6.42,
-    quantity: 2
-  },
-  {
-    id: 4,
-    product: "Green Scrubbie Pad H.duty",
-    price: 15.33,
-    quantity: 3
-  },
-  {
-    id: 5,
-    product: "Soup Campbells Split Pea And Ham",
-    price: 4.03,
-    quantity: 3
-  }
-];
-
-function calculateTotal(cart, tax) {
-  let total = 0;
-  for (let i = 0; i < cart.length; i++) {
-    total = total + cart[i].quantity * cart[i].price;
-  }
-  return (total * tax).toFixed(2);
+function precisionRound(number, precision) {
+  var factor = Math.pow(10, precision);
+  return Math.round(number * factor) / factor;
 }
 
-let total = calculateTotal(cart, 1.06);
-total;
+function calcTotal(arr, taxRate){
+  let initialTotal = arr.reduce((acc, cur)=>(acc+(cur.price*cur.quantity)),0);
+  let tax = initialTotal * taxRate;
+  let total = initialTotal + tax
+  return precisionRound(total, 2)
+}
 
-let shortTotal = (cart, tax) =>
-  (
-    cart.reduce((total, item) => total + item.price * item.quantity, 0) * tax
-  ).toFixed(2);
 
-console.log(shortTotal(cart, 1.03));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let cart = [
+	{
+		id: 1,
+		product: 'Snapple Raspberry Tea',
+		price: 16.82,
+		quantity: 2,
+	},
+	{
+		id: 2,
+		product: 'Wine - Peller Estates Late',
+		price: 15.07,
+		quantity: 3,
+	},
+	{
+		id: 3,
+		product: 'Isomalt',
+		price: 6.42,
+		quantity: 2,
+	},
+	{
+		id: 4,
+		product: 'Green Scrubbie Pad H.duty',
+		price: 15.33,
+		quantity: 3,
+	},
+	{
+		id: 5,
+		product: 'Soup Campbells Split Pea And Ham',
+		price: 4.03,
+		quantity: 3,
+	},
+];
+
+var tax = .07;
+var test = calcTotal(cart, tax);
+
+const {should} = require('chai');
+should();
+cart.should.be.a('array');
+cart.length.should.equal(5);
+test.should.be.a('number');
+test.should.equal(160.25);
+
+
+console.log('all tests passing!')
+
