@@ -1,6 +1,11 @@
-// Below is an array of products that are in a cart.
-// Write a function that will take in the cart and a tax amount and calculate the total price of the cart with the tax.
-// Return the total of the cart rounded the 2nd decimal place
+/* 
+  Our goal today is to create a function called calcTotal. 
+    * calcTotal will take in two arguments, an array of objects and a tax amount.
+    * Calculate the total price of items in the array (pay attention to quantity)
+    * Return the total including taxes rounded to two decimal.
+*/
+
+// Your code here.
 
 let cart = [
   {
@@ -34,3 +39,15 @@ let cart = [
     quantity: 3
   }
 ];
+
+var tax = 0.07;
+var test = calcTotal(cart, tax);
+
+const { should } = require("chai");
+should();
+cart.should.be.a("array");
+cart.length.should.equal(5);
+test.should.be.a("number");
+test.should.equal(160.25);
+
+console.log("all tests passing!");
