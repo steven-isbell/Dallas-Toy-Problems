@@ -6,4 +6,4 @@
 
 ### Day 3: Find palindromes
 
-### Day 4:
+### Day 4: Manipulate hexidecimal array
