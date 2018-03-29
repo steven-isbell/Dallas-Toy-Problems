@@ -1,6 +1,9 @@
-// Programming languages are eventually reduced to machine code or a series of 1/0 binary sequences. In this exercise you will be converting a javascript string into it's equivalent series of binary sequences. Binary sequences contain 8 digits and will only consist of 1s and 0s.
+// Programming languages are eventually reduced to machine code or a series of 1/0 binary sequences. In this exercise you will be converting a javascript string into it's equivalent binary representation. Your binary sequences should contain 8 digits and will only consist of 1s and 0s. Return a single string with each binary representation separated by a space. Make sure you remove white space from the beginning and end of the string.
 
-// Reference this link to view the ASCII table:
+// Example:
+// 'hello' === text2Binary ===> '01101000 01100101 01101100 01101100 01101111'
+
+// ASCII Binary Character Table:
 // http://sticksandstones.kstrom.com/appen.html
 
 // Test your binary <--> text conversion here:
@@ -11,6 +14,6 @@ const name = "your name here";
 // Convert text to binary
 // ======================
 text2Binary = str => {
-  // code here
+  // Code Here ...
 };
 text2Binary(name);
