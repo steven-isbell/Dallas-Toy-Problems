@@ -1,4 +1,4 @@
-// Today your objective is to evaluate various statistics about binary sequences. You are given the text2Binary function we created yesterday in order to convert a string to binary. Use binaryStats to determine the following information about the binary sequence:
+// Today your objective is to evaluate various statistics about binary representations. You are given the text2Binary function we created yesterday in order to convert a string to binary. Use binaryStats to determine the following information about the binary sequence:
 
 // 1) Find the total count of 0s.
 // 2) Find the total count of 1s.
@@ -8,7 +8,7 @@
 // binaryStats will return a formatted string value containing the appropriate statistics.
 // Example return value: "0 wins with a count of 17 and 58%"
 
-// Use this function to convert a string into binary sequences.
+// Use this function to convert a string into binary sequence.
 const name = "random string here";
 text2Binary = str =>
   str
