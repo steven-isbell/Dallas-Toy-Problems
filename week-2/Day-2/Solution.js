@@ -106,7 +106,7 @@ const filterPosts = arr =>
 
 // Regex Method
 const filterPosts = arr => {
-  var regex = new RegExp(wordsToFilter.join("|"), "gi");
+  const regex = new RegExp(wordsToFilter.join("|"), "gi");
   for (let i = 0; i < arr.length; i++) {
     arr[i].text = arr[i].text.replace(regex, function(match) {
       return "*".repeat(match.length);
@@ -116,12 +116,10 @@ const filterPosts = arr => {
 };
 
 // Regex with map
-const filterPosts = arr =>
-  arr.map(post =>
-    Object.assign({}, post, {
-      text: val.text.replace(
-        /crap|butt|shoot|dang|flipping|freaking/gi,
-        match => "*".repeat(match.length)
-      )
-    })
-  );
+const filterPosts = arr => {
+	const regex = new RegExp(wordsToFilter.join('|'), 'gi');
+	return arr.map(post => ({
+		...post,
+		text: val.text.replace(regex, match => '*'.repeat(match.length)),
+	}));
+};
